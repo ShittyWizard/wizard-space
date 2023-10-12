@@ -1,0 +1,1 @@
+docker run --name wizard-space_postgres -e POSTGRES_USER=wizard -e POSTGRES_PASSWORD=54321 -d -p 5432:5432 postgres:alpine

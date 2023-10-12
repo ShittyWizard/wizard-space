@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  flyway:
+    locations:
+      - db/migrations
+    sql-migration-prefix: V
+    sql-migration-separator: __
+    sql-migration-suffixes:
+      - .sql
+
+
+app:
+  datasource:
+    jdbc-url: jdbc:postgresql://localhost:5432/wizard
+    username: wizard
+    password: 54321
+    pool-size: 5
