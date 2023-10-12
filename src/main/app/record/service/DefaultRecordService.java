@@ -37,9 +37,9 @@ public class DefaultRecordService implements RecordService {
     }
 
     @Override
-    public void deleteById(UUID recordId) throws RecordNotFoundException {
-        Record record = getById(recordId);
-        repository.delete(record);
+    public Record create(RecordCreate recordCreate) {
+        Record newRecord = new Record(recordCreate.getId(), recordCreate.getName());
+        return repository.save(newRecord);
     }
 
     @Override
@@ -51,8 +51,8 @@ public class DefaultRecordService implements RecordService {
     }
 
     @Override
-    public Record create(RecordCreate recordCreate) {
-        Record newRecord = new Record(recordCreate.getId(), recordCreate.getName());
-        return repository.save(newRecord);
+    public void deleteById(UUID recordId) throws RecordNotFoundException {
+        Record record = getById(recordId);
+        repository.delete(record);
     }
 }
