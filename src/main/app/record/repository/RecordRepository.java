@@ -9,6 +9,4 @@ import java.util.UUID;
 
 @Repository
 public interface RecordRepository extends JpaRepository<Record, UUID> {
-    Optional<Record> findById(UUID id);
-
 }
