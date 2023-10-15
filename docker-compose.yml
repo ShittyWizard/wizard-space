@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:alpine
+    container_name: wizard-space_postgres
+    environment:
+      POSTGRES_USER: wizard
+      POSTGRES_PASSWORD: 54321
+    ports:
+      - '5432:5432'
+    networks:
+      - wizard-space-infra
+
+  spring-app:
+    build:
+      context: .
+    container_name: wizard-space_app
+    ports:
+      - '8080:8080'
+    depends_on:
+      - postgres
+    networks:
+      - wizard-space-infra
+#    todo: environment:
+
+networks:
+  wizard-space-infra:
