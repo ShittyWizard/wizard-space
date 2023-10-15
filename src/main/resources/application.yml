@@ -13,7 +13,7 @@ spring:
 
 app:
   datasource:
-    jdbc-url: jdbc:postgresql://localhost:5432/wizard
+    jdbc-url: jdbc:postgresql://wizard-space_postgres:5432/wizard
     username: wizard
     password: 54321
     pool-size: 5
