@@ -38,13 +38,13 @@ public class DefaultRecordService implements RecordService {
 
     @Override
     public Record create(RecordCreate recordCreate) {
-        Record newRecord = new Record(recordCreate.getId(), recordCreate.getName());
+        Record newRecord = new Record(recordCreate.getName());
         return repository.save(newRecord);
     }
 
     @Override
     public Record edit(RecordEdit recordEdit) throws RecordNotFoundException {
-        UUID recordId = recordEdit.getRecordId();
+        UUID recordId = recordEdit.getId();
         Record record = getById(recordId);
         record.setName(recordEdit.getName());
         return repository.save(record);

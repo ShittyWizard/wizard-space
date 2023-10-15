@@ -3,20 +3,23 @@ package app.record.dto;
 import java.util.UUID;
 
 public class RecordEdit {
-    private UUID recordId;
+    private UUID id;
     private String name;
 
+    public RecordEdit() {
+    }
+
     public RecordEdit(UUID recordId, String name) {
-        this.recordId = recordId;
+        this.id = recordId;
         this.name = name;
     }
 
-    public UUID getRecordId() {
-        return recordId;
+    public UUID getId() {
+        return id;
     }
 
-    public void setRecordId(UUID recordId) {
-        this.recordId = recordId;
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     public String getName() {

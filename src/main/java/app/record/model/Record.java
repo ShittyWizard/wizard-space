@@ -17,6 +17,10 @@ public class Record {
     public Record() {
     }
 
+    public Record(String name) {
+        this.name = name;
+    }
+
     public Record(UUID id, String name) {
         this.id = id;
         this.name = name;

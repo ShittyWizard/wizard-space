@@ -76,7 +76,7 @@ public class DefaultRecordServiceTest {
         Record expectedResult = new Record(UUID.randomUUID(), "Record1");
         when(repository.save(Mockito.any(Record.class))).thenReturn(expectedResult);
 
-        Record createResult = recordService.create(new RecordCreate(expectedResult.getId(), expectedResult.getName()));
+        Record createResult = recordService.create(new RecordCreate(expectedResult.getName()));
 
         Assert.assertEquals(expectedResult, createResult);
     }

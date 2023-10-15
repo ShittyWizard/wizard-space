@@ -22,7 +22,7 @@ public class RecordController {
         return service.getAll();
     }
 
-    @GetMapping("/get/${id}")
+    @GetMapping("/get/{recordId}")
     public Record getById(@PathVariable UUID recordId) throws RecordNotFoundException {
         return service.getById(recordId);
     }
@@ -37,9 +37,9 @@ public class RecordController {
         return service.edit(recordEdit);
     }
 
-    @DeleteMapping("/delete/${id}")
-    public void delete(@PathVariable UUID id) throws RecordNotFoundException {
-        service.deleteById(id);
+    @DeleteMapping("/delete/{recordId}")
+    public void delete(@PathVariable UUID recordId) throws RecordNotFoundException {
+        service.deleteById(recordId);
     }
 
 }
